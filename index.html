@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ee">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+   
+    <title>Tres en Raya</title>
+</head>
+<body>
+    <header>
+        <h1>Tres en Raya</h1>
+    </header>
+
+    <section class="tablero">
+        <div class="contenedor">
+            <div id="celda1" onclick="mostrarSimbolo(`celda1`)"></div>
+            <div id="celda2" onclick="mostrarSimbolo(`celda2`)"></div>
+            <div id="celda3" onclick="mostrarSimbolo(`celda3`)"></div>
+            <div id="celda4" onclick="mostrarSimbolo(`celda4`)"></div>
+            <div id="celda5" onclick="mostrarSimbolo(`celda5`)"></div>
+            <div id="celda6" onclick="mostrarSimbolo(`celda6`)"></div>
+            <div id="celda7" onclick="mostrarSimbolo(`celda7`)"></div>
+            <div id="celda8" onclick="mostrarSimbolo(`celda8`)"></div>
+            <div id="celda9" onclick="mostrarSimbolo(`celda9`)"></div>
+        </div>
+
+    </section>
+
+    <aside class="contadores">
+
+
+        <div class="partidas">
+            <div class="contador" id="contador">Numero de partidas: 0</div>
+        </div>
+
+        <div id="nombreJ1" onclick="jugador1.introducirNombre(`X`)">
+            <div>Introduce Nombre J1</div>
+        </div>
+
+        <div id="nombreJ2" onclick="jugador2.introducirNombre(`O`)">
+            <div>Introduce Nombre J2</div>
+        </div>
+
+        <div class="ganadas" id="ganadasJ1">
+            Victorias Jugador 1 = 0
+        </div>
+
+        <div class="ganadas" id="ganadasJ2">
+            Victorias Jugador 2 = 0
+
+
+        </div>
+
+        <div class="reset_partidas">
+            <button class="button" onclick="resetContador()">Resetear contador</button>
+        </div>
+
+        <div class="reset">
+            <button class="button" onclick="reset()">Resetear Juego</button>
+        </div>
+
+    </aside>
+
+    <footer>
+
+    </footer>
+
+
+
+     <script src="script2.js"></script>
+</body>
+</html>

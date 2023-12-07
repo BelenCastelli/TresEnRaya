@@ -1,0 +1,148 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+
+    display: grid;
+    grid-template-columns: [x0] 1fr [x1] 1fr [x2];
+    grid-template-rows: [y0] 1fr [y1] 6fr [y2] 1fr[y3];
+}
+
+header{
+    grid-column: x0/x2;
+    grid-row: y0/y1;
+    background-color: rgb(2, 11, 19);
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tablero{
+    grid-column: x0/x1;
+    grid-row: y1/y2;
+    background-color:  gray;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+
+    padding-right: 100px;
+}
+
+.contenedor{
+    border: solid black 2px;
+    display:grid;
+    grid-template-areas:    "celda1 celda2 celda3"
+                            "celda4 celda5 celda6"
+                            "celda7 celda8 celda9 "
+}
+#celda1, #celda2, #celda3, #celda4, #celda5, #celda6, #celda7, #celda8, #celda9 {
+    height: 200px;
+    width: 200px;
+    border: solid black 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 70pt;
+}
+
+.contadores{
+    grid-column: x1/x2;
+    grid-row: y1/y2;
+    background-color: rgba(128, 128, 128, 0.555);
+    font-size: 20pt;
+    padding: 20px;
+    padding-left: 50px;
+
+
+    display: grid;
+    grid-template-columns: [x0] 1fr [x1] 1fr [x2];
+    grid-template-rows: [y0] 1fr [y1] 1fr [y2] 1fr [y3] 
+                        1fr [y4];
+    grid-row-gap: 50px;
+    grid-column-gap: 50px;
+
+    
+}
+.jugar, .partidas, .ganadas, #nombreJ1, #nombreJ2, .reset_partidas, .reset{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#nombreJ1:hover, #nombreJ2:hover{
+    cursor: pointer;
+}
+
+
+.partidas {
+    grid-column: x0/x2;
+    grid-row: y0/y1;
+    color: white;
+    background-color: black;
+    font-size: 24pt;
+
+}
+
+#nombreJ1 {
+    
+        grid-column: x0/x1;
+        grid-row: y1/y2;
+        border: solid black 2px;
+}
+
+#ganadasJ1{
+    grid-column: x1/x2;
+    grid-row: y1/y2;
+    border: solid black 2px;
+}
+
+#nombreJ2 {
+    grid-column: x0/x1;
+    grid-row: y2/y3;
+    border: solid black 2px;
+}
+#ganadasJ2{
+    grid-column: x1/x2;
+    grid-row: y2/y3;
+    border: solid black 2px;
+}
+
+.reset_partidas{
+    grid-column: x0/x1;
+    grid-row: y3/y4;
+    justify-content: center;
+}
+
+.reset{
+    grid-column: x1/x2;
+    grid-row: y3/y4;
+    justify-content: center;
+}
+
+.button{
+    height: 60px;
+    width: 300px;
+    background-color: black;
+    color: white;
+    font-size: 18pt
+    ;
+}
+
+
+
+
+footer{
+    grid-column: x0/x2;
+    grid-row: y2/y3;
+    background-color: black;
+}
+
