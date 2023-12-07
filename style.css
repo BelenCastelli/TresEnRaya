@@ -54,6 +54,13 @@ header{
     font-size: 70pt;
 }
 
+.x{
+    color: #0519f5; 
+}
+
+.o{
+    color: #eb0c0c;
+}
 .contadores{
     grid-column: x1/x2;
     grid-row: y1/y2;

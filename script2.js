@@ -23,8 +23,7 @@ let victoriasJ2 = 0
 let contador = document.getElementById("contador");
 let partidas = 0;
 
-// turnos
-let jugador = 1
+
 
 // celdas ocupadas para empate
 let celdasOcupadas = 0;
@@ -51,19 +50,30 @@ class Jugador {
 let jugador1 = new Jugador("X")
 let jugador2 = new Jugador("O")
 
+let jugador = jugador1
+
 function mostrarSimbolo(celda){
     celda = document.getElementById(celda)
 
-    // Alternar jugadores 
-    if (jugador == 1){
-         celda.textContent = jugador1.simbolo
-        jugador = 2
-    } else if (jugador == 2){
-        celda.textContent = jugador2.simbolo;
-        jugador = 1
-    }
-    celdasOcupadas++
 
+        // Alternar jugadores 
+    if (jugador == jugador1){
+         celda.textContent = jugador1.simbolo
+         celda.classList.add('x');
+         celda.classList.remove('o')
+
+        jugador = jugador2
+
+    } else if (jugador == jugador2){
+        celda.textContent = jugador2.simbolo;
+        celda.classList.add('o');
+        celda.classList.remove('x')
+        
+        jugador = jugador1
+    }
+
+
+    celdasOcupadas++
     comprobarVictoria(celda);
 }
 
@@ -72,7 +82,7 @@ function comprobarVictoria(){
     if ((celda1.textContent == jugador1.simbolo && celda2.textContent == jugador1.simbolo && celda3.textContent == jugador1.simbolo) || 
     (celda4.textContent == jugador1.simbolo && celda5.textContent == jugador1.simbolo && celda6.textContent == jugador1.simbolo) ||
     (celda1.textContent == jugador1.simbolo && celda4.textContent == jugador1.simbolo && celda7.textContent == jugador1.simbolo) ||
-    (celda2.textContent == jugador1.simbolo && celda5.textContent == jugador1.simbolo && celda7.textContent == jugador1.simbolo) ||
+    (celda2.textContent == jugador1.simbolo && celda5.textContent == jugador1.simbolo && celda8.textContent == jugador1.simbolo) ||
     (celda7.textContent == jugador1.simbolo && celda8.textContent == jugador1.simbolo && celda9.textContent == jugador1.simbolo) || 
     (celda3.textContent == jugador1.simbolo && celda6.textContent == jugador1.simbolo && celda9.textContent == jugador1.simbolo) ||
     (celda1.textContent == jugador1.simbolo && celda5.textContent == jugador1.simbolo && celda9.textContent == jugador1.simbolo) || 
@@ -89,7 +99,7 @@ function comprobarVictoria(){
     if ((celda1.textContent == jugador2.simbolo && celda2.textContent == jugador2.simbolo && celda3.textContent == jugador2.simbolo) || 
     (celda4.textContent == jugador2.simbolo && celda5.textContent == jugador2.simbolo && celda6.textContent == jugador2.simbolo) ||
     (celda1.textContent == jugador2.simbolo && celda4.textContent == jugador2.simbolo && celda7.textContent == jugador2.simbolo) ||
-    (celda2.textContent == jugador2.simbolo && celda5.textContent == jugador2.simbolo && celda7.textContent == jugador2.simbolo) ||
+    (celda2.textContent == jugador2.simbolo && celda5.textContent == jugador2.simbolo && celda8.textContent == jugador2.simbolo) ||
     (celda1.textContent == jugador2.simbolo && celda4.textContent == jugador2.simbolo && celda7.textContent == jugador2.simbolo) ||
     (celda7.textContent == jugador2.simbolo && celda8.textContent == jugador2.simbolo && celda9.textContent == jugador2.simbolo) || 
     (celda3.textContent == jugador2.simbolo && celda6.textContent == jugador2.simbolo && celda9.textContent == jugador2.simbolo) ||
@@ -106,7 +116,7 @@ function comprobarVictoria(){
     } 
 
     if(celdasOcupadas == 9){
-        alert("¡Ha sido un empate")
+        alert("¡Ha sido un empate!")
         celdasOcupadas = 0;
         reset()
         partidas++
@@ -118,11 +128,17 @@ function reset(){
     for(let i = 0; i < celdas.length; i++){
         celdas[i].textContent = ""
     }
+    celdasOcupadas = 0;
 }
 
 
 
 function resetContador(){
+
+    for(let i = 0; i < celdas.length; i++){
+        celdas[i].textContent = ""
+    }
+
     contador.textContent = `Número de Partidas: 0`
     partidas = 1
 
@@ -139,4 +155,5 @@ function resetContador(){
     ganadasJ2.textContent = `Victorias Jugador 2 = 0`
     ganadasJ2.style.color = "#000000"
     victoriasJ2 = 1
+    celdasOcupadas = 0;
 }
