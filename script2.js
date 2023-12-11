@@ -150,10 +150,10 @@ function resetContador(){
 
     ganadasJ1.textContent = `Victorias Jugador 1 = 0`
     ganadasJ1.style.color = "#000000"
-    victoriasJ1 = 1
+    victoriasJ1 = 0
 
     ganadasJ2.textContent = `Victorias Jugador 2 = 0`
     ganadasJ2.style.color = "#000000"
-    victoriasJ2 = 1
+    victoriasJ2 = 0
     celdasOcupadas = 0;
 }
